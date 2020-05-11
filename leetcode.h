@@ -2,7 +2,7 @@
  * @Author: Hata
  * @Date: 2020-05-07 14:20:38
  * @LastEditors: Hata
- * @LastEditTime: 2020-05-08 13:01:41
+ * @LastEditTime: 2020-05-11 09:55:39
  * @FilePath: \LeetCode\leetcode.h
  * @Description: 
  */
@@ -19,4 +19,13 @@ struct ListNode
     int val;
     ListNode *next;
     ListNode(int x) : val(x), next(NULL) {}
+};
+
+// Definition for a binary tree node.
+struct TreeNode
+{
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
