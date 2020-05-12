@@ -2,9 +2,9 @@
  * @Author: Hata
  * @Date: 2020-05-06 11:01:33
  * @LastEditors: Hata
- * @LastEditTime: 2020-05-06 11:41:06
+ * @LastEditTime: 2020-05-12 10:40:13
  * @FilePath: \LeetCode\207.cpp
- * @Description: 课程表
+ * @Description: 
  */
 
 #include <bits/stdc++.h>
