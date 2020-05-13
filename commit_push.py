@@ -2,7 +2,7 @@
 @Author: Hata
 @Date: 2020-05-11 20:20:27
 @LastEditors: Hata
-@LastEditTime: 2020-05-11 20:26:10
+@LastEditTime: 2020-05-13 14:07:43
 @FilePath: \LeetCode\commit_push.py
 @Description: 
 '''
@@ -19,4 +19,4 @@ if __name__ == "__main__":
     os.system(add)
     os.system(commit)
     os.system(push)
-    os.system(pause)
+    # os.system(pause)
