@@ -2,7 +2,7 @@
  * @Author: Hata
  * @Date: 2020-05-15 14:29:06
  * @LastEditors: Hata
- * @LastEditTime: 2020-05-20 18:11:42
+ * @LastEditTime: 2020-05-20 18:14:52
  * @FilePath: \LeetCode\43.cpp
  * @Description: https://leetcode-cn.com/problems/multiply-strings/solution/
  */
@@ -18,24 +18,26 @@ public:
             return res;
         int count = 0;
 
-        std::for_each(num2.rbegin(), num2.rend(), [&](const auto &a) {
-            int value = a - '0';
-            int flag = 0;
-            std::string str(count, '0');
-            std::for_each(num1.rbegin(),
-                          num1.rend(),
-                          [&](const auto &b) {
-                              int mut = (b - '0') * value + flag;
-                              int v = mut % 10;
-                              flag = (mut - v) / 10;
-                              str.push_back(v + '0');
-                          });
+        std::for_each(
+            num2.rbegin(), num2.rend(),
+            [&](const auto &a) {
+                int value = a - '0';
+                int flag = 0;
+                std::string str(count, '0');
+                std::for_each(num1.rbegin(),
+                              num1.rend(),
+                              [&](const auto &b) {
+                                  int mut = (b - '0') * value + flag;
+                                  int v = mut % 10;
+                                  flag = (mut - v) / 10;
+                                  str.push_back(v + '0');
+                              });
 
-            if (flag != 0)
-                str.push_back(flag + '0');
-            add(std::move(res), str);
-            ++count;
-        });
+                if (flag != 0)
+                    str.push_back(flag + '0');
+                add(std::move(res), str);
+                ++count;
+            });
 
         std::reverse(res.begin(), res.end());
         return res;
