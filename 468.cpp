@@ -2,12 +2,15 @@
  * @Author: Hata
  * @Date: 2020-05-30 17:40:11
  * @LastEditors: Hata
- * @LastEditTime: 2020-05-30 18:42:45
+ * @LastEditTime: 2020-05-30 20:16:55
  * @FilePath: \LeetCode\468.cpp
  * @Description: https://leetcode-cn.com/problems/validate-ip-address/
  */
 
-#include <bits/stdc++.h>
+#include <string>
+#include <vector>
+#include <string_view>
+#include <algorithm>
 
 std::vector<std::string_view>
 splitSV(std::string_view strv, std::string_view delims = " ")

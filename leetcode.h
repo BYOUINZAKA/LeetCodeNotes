@@ -2,7 +2,7 @@
  * @Author: Hata
  * @Date: 2020-05-07 14:20:38
  * @LastEditors: Hata
- * @LastEditTime: 2020-05-11 09:55:39
+ * @LastEditTime: 2020-05-30 19:34:14
  * @FilePath: \LeetCode\leetcode.h
  * @Description: 
  */
@@ -29,20 +29,3 @@ struct TreeNode
     TreeNode *right;
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
-
-std::vector<std::string_view>
-splitSV(std::string_view strv, std::string_view delims = " ")
-{
-    std::vector<std::string_view> output;
-    size_t first = 0;
-    while (first < strv.size())
-    {
-        const auto second = strv.find_first_of(delims, first);
-        if (first != second)
-            output.emplace_back(strv.substr(first, second - first));
-        if (second == std::string_view::npos)
-            break;
-        first = second + 1;
-    }
-    return output;
-}

@@ -3,7 +3,8 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "D:/MinGW/include/**"
             ],
             "defines": [
                 "_DEBUG",
@@ -11,9 +12,11 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.17763.0",
-            "compilerPath": "D:/mingw64/bin/g++.exe",
-            "cStandard": "c11",
-            "cppStandard": "c++17"
+            "compilerPath": "D:/MinGW/bin/g++.exe",
+            "cStandard": "c18",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "${default}",
+            "compilerArgs": []
         }
     ],
     "version": 4
