@@ -2,7 +2,7 @@
  * @Author: Hata
  * @Date: 2020-06-04 06:16:15
  * @LastEditors: Hata
- * @LastEditTime: 2020-06-04 07:11:04
+ * @LastEditTime: 2020-06-04 19:03:16
  * @FilePath: \LeetCode\988.cpp
  * @Description: https://leetcode-cn.com/problems/smallest-string-starting-from-leaf/
  */
