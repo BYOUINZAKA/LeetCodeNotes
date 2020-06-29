@@ -2,7 +2,7 @@
  * @Author: Hata
  * @Date: 2020-06-12 23:59:17
  * @LastEditors: Hata
- * @LastEditTime: 2020-06-13 00:13:24
+ * @LastEditTime: 2020-06-29 19:36:41
  * @FilePath: \LeetCode\414.cpp
  * @Description: https://leetcode-cn.com/problems/third-maximum-number/
  */
@@ -13,20 +13,16 @@ class Solution
 public:
     int thirdMax(std::vector<int> &nums)
     {
-        if (nums.size() < 3)
+        std::set<int> set;
+        for (auto &&i : nums)
         {
-            std::sort(nums.begin(), nums.end());
-            return nums.back();
+            set.insert(i);
+            if (set.size() > 3)
+                set.erase(set.begin());
         }
-        std::priority_queue<int, std::vector<int>, std::greater_equal<int>> queue;
-        queue.push(nums[0]);
-        queue.push(nums[1]);
-        queue.push(nums[2]);
-        for (int i = 3; i < nums.size(); ++i)
-        {
-            queue.push(nums[i]);
-            queue.pop();
-        }
-        return queue.top();
+        if (set.size() < 3)
+            return *set.rbegin();
+        else
+            return *set.begin();
     }
 };

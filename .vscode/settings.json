@@ -75,6 +75,7 @@
         "any": "cpp",
         "strstream": "cpp",
         "bit": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "*.ipp": "cpp"
     }
 }
