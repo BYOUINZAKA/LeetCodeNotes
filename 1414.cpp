@@ -2,59 +2,65 @@
  * @Author: Hata
  * @Date: 2020-05-06 11:43:56
  * @LastEditors: Hata
- * @LastEditTime: 2020-05-06 11:45:12
+ * @LastEditTime: 2020-06-30 15:52:17
  * @FilePath: \LeetCode\1414.cpp
  * @Description: 和为 K 的最少斐波那契数字数目
  */
 
 #include <bits/stdc++.h>
+
 template <int N>
 struct Fibo
+// 模板推导类，递归解包。
 {
     constexpr static int value = Fibo<N - 1>::value + Fibo<N - 2>::value;
 };
 
 template <>
 struct Fibo<1>
+// 模板偏特化设定递归终止条件。
 {
     constexpr static int value = 1;
 };
 
 template <>
 struct Fibo<0>
+// 模板偏特化设定递归终止条件。
 {
     constexpr static int value = 1;
 };
 
-const constexpr int SIZE = 45;
-int FiboList[SIZE];
-
-template <int Index = SIZE - 1>
-constexpr void fill()
-{
-    ::FiboList[Index] = Fibo<Index>::value;
-    fill<Index - 1>();
-}
-
-template <>
-void fill<0>()
-{
-    ::FiboList[0] = Fibo<0>::value;
-}
-
 class Solution
 {
+    template <int N, int... Args>
+    struct Unpack
+    {
+        static std::vector<int> get()
+        {
+            return Unpack<N - 1, N, Args...>::get();
+        }
+    };
+
+    template <int... Args>
+    struct Unpack<0, Args...>
+    {
+        static std::vector<int> get()
+        {
+            return std::vector<int>{Fibo<0>::value, Fibo<Args>::value...};
+        }
+    };
+
 public:
     int findMinFibonacciNumbers(int k)
     {
-        ::fill();
+        auto &&list = Unpack<45>::get();
         int res = 0;
-        for (int i = ::SIZE - 1; i >= 0; --i)
+        for (auto it = list.rbegin(); it != list.rend(); ++it)
         {
-            if (k >= ::FiboList[i])
+            if (k >= *it)
             {
                 ++res;
-                k -= ::FiboList[i];
+                k -= *it;
             }
         }
         return res;
