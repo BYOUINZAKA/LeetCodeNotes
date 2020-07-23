@@ -2,7 +2,7 @@
  * @Author: Hata
  * @Date: 2020-07-23 16:37:53
  * @LastEditors: Hata
- * @LastEditTime: 2020-07-23 17:05:27
+ * @LastEditTime: 2020-07-23 17:31:10
  * @FilePath: \LeetCode\386.js
  * @Description: https://leetcode-cn.com/problems/lexicographical-numbers/
  */
@@ -24,7 +24,7 @@ let lexicalOrder = function (n) {
             dfs(array, next + j);
         }
     };
-    let res = [];
+    const res = [];
     for (let i = 1; i < 10; ++i) dfs(res, i);
     return res;
 };
