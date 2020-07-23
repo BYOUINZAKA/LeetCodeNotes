@@ -2,7 +2,7 @@
  * @Author: Hata
  * @Date: 2020-05-06 14:04:00
  * @LastEditors: Hata
- * @LastEditTime: 2020-05-06 14:17:31
+ * @LastEditTime: 2020-07-01 15:26:14
  * @FilePath: \LeetCode\01-05.cpp
  * @Description: 
  */
@@ -16,21 +16,10 @@ public:
     {
         if (std::abs(int(first.length()) - int(second.length())) > 1)
             return false;
-        auto pair = std::mismatch(first.begin(), first.end(), second.begin(), second.end());
-        if (pair.first == first.end() || pair.second == second.end())
-            return true;
-        if (first.length() == second.length())
-        {
-            pair.first++;
-            pair.second++;
-        }
-        else if (first.length() > second.length())
-            pair.first++;
-        else
-            pair.second++;
-        auto pair2 = std::mismatch(pair.first, first.end(), pair.second, second.end());
-        if (pair.first == first.end() && pair.second == second.end())
-            return true;
-        return false;
+
+        auto &&[it1, it2] = std::mismatch(first.cbegin(), first.cend(), second.cbegin(), second.cend());
+        auto &&[rit1, rit2] = std::mismatch(first.crbegin(), first.crend(), second.crbegin(), second.crend());
+
+        return (rit1.base() - it1 <= 1) && (rit2.base() - it2 <= 1);
     }
 };

@@ -2,7 +2,7 @@
  * @Author: Hata
  * @Date: 2020-06-07 17:04:25
  * @LastEditors: Hata
- * @LastEditTime: 2020-06-07 17:05:12
+ * @LastEditTime: 2020-07-23 16:03:45
  * @FilePath: \LeetCode\513.cs
  * @Description: https://leetcode-cn.com/problems/find-bottom-left-tree-value/
  */
@@ -29,5 +29,10 @@ public class Solution
             }
         }
         return res;
+    }
+
+    static void Main()
+    {
+        System.Console.WriteLine("Hello World!");
     }
 }

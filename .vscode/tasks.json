@@ -8,6 +8,8 @@
         "-g",
         "-Wall",
         "-std=c++17",
+        // "-O0",
+        // "-ftemplate-depth=100000",
         "-lm",
         "${file}",
         "-o",

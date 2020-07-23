@@ -10,7 +10,8 @@
             "request": "launch",
             "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
             "args": [
-                "-std=c++17"
+                "-std=c++17",
+                "-O0"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
