@@ -2,7 +2,7 @@
  * @Author: Hata
  * @Date: 2020-07-23 18:41:21
  * @LastEditors: Hata
- * @LastEditTime: 2020-07-23 20:22:29
+ * @LastEditTime: 2020-07-24 17:54:55
  * @FilePath: \LeetCode\149.js
  * @Description: https://leetcode-cn.com/problems/max-points-on-a-line/
  */
@@ -11,7 +11,7 @@
  * @param {number[][]} points
  * @return {number}
  */
-const maxPoints = function (points) {
+maxPoints = function (points) {
     const length = points.length;
     if (length < 3) return length;
 
