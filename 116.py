@@ -2,11 +2,10 @@
 @Author: Hata
 @Date: 2020-07-26 03:41:32
 @LastEditors: Hata
-@LastEditTime: 2020-07-26 04:09:30
+@LastEditTime: 2020-07-28 21:31:17
 @FilePath: \LeetCode\116.py
 @Description: https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/
 '''
-
 
 class Solution:
     def connect(self, root: 'Node') -> 'Node':

@@ -2,7 +2,7 @@
  * @Author: Hata
  * @Date: 2020-07-11 19:40:43
  * @LastEditors: Hata
- * @LastEditTime: 2020-07-20 17:05:53
+ * @LastEditTime: 2020-07-28 10:58:24
  * @FilePath: \LeetCode\tools.h
  * @Description:
  */
@@ -97,6 +97,11 @@
 */
 
 namespace lctools {
+
+template <typename T>
+T& ToTestCase(T&& v) {
+    return std::forward<T&>(v);
+}
 
 template <typename T>
 struct IsIterateable {

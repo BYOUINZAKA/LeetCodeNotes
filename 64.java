@@ -1,12 +1,15 @@
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.List;
+
 /*
  * @Author: Hata
  * @Date: 2020-07-24 04:13:58
  * @LastEditors: Hata
- * @LastEditTime: 2020-07-24 16:04:57
+ * @LastEditTime: 2020-07-29 07:04:15
  * @FilePath: \LeetCode\64.java
  * @Description: https://leetcode-cn.com/problems/minimum-path-sum/
  */
-
 class Solution {
     public int minPathSum(int[][] grid) {
         int n = grid.length, m = grid[0].length;
@@ -22,5 +25,21 @@ class Solution {
             }
         }
         return dp[n - 1][m - 1];
+    }
+
+    public Integer value = 7;
+
+    public Integer get() {
+        return value;
+    }
+
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        Integer ppp = s.value;
+        System.out.println(System.identityHashCode(s.value));
+        System.out.println(System.identityHashCode(ppp));
+        ppp = 5;
+        System.out.println(System.identityHashCode(s.value));
+        System.out.println(System.identityHashCode(ppp));
     }
 }
